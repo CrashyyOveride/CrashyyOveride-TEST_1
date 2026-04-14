@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pseudocode Logic Lab v1.10</title>
+    <title>My Coding Quiz</title> <!-- Less "v1.10" branding -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-
-    <div id="app-container">
-        <div class="progress-track"><div id="p-bar" class="progress-fill"></div></div>
+    <div id="app-wrapper"> <!-- Swapped 'container' for 'wrapper' -->
+        <!-- Just one simple progress bar -->
+        <div class="bar-outer"><div id="p-bar" class="bar-inner"></div></div>
         
-        <div id="quiz-view">
-            <div class="status-bar" id="progress-text">Session active // node.01</div>
-            <h2 id="scenario-title">Initializing Systems...</h2>
-            <div id="options-container" class="options-grid"></div>
-            <div id="hint-box"></div>
-            <button id="next-btn" class="btn-supreme" style="display: none;">Continue [Enter]</button>
+        <div id="quiz-screen">
+            <!-- Simpler text instead of // node.01 -->
+            <p id="q-counter">Question 1 of 5</p>
+            <h2 id="q-title">Wait for it...</h2>
+            
+            <div id="options" class="grid"></div>
+            <div id="hint" style="display:none;"></div> <!-- Inline style for quick hiding -->
+            
+            <button id="next-btn" class="main-btn" style="display: none;">Next</button>
         </div>
 
-        <div id="report-view" style="display: none; text-align: center;">
-            <p>OPTIMISATION COMPLETE</p>
-            <h1 style="font-size: 4rem; margin: 10px 0;">RANK: <span id="rank-text" style="color: var(--accent)">-</span></h1>
-            <p id="performance-summary">Learning Centre Quiz Processed Successfully.</p>
-            <button onclick="location.reload()" class="btn-supreme">Reboot Session</button>
+        <div id="result-screen" style="display: none;">
+            <h2>Done!</h2>
+            <p>Your Final Rank: <span id="rank-text">?</span></p>
+            <button onclick="location.reload()" class="main-btn">Try Again</button>
         </div>
     </div>
     <script src="script.js"></script>
